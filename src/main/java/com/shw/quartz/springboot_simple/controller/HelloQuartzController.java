@@ -65,6 +65,16 @@ public class HelloQuartzController {
     }
 
     /**
+     * 删除定时任务
+     * @return
+     */
+    @GetMapping("/deleteHelloWorldJob")
+    public String deleteHelloWorldJob() throws SchedulerException {
+        quartzJobService.deleteJob(jobKey);
+        return "delete HelloWorld Job success";
+    }
+
+    /**
      * 恢复
      * @return
      */
@@ -93,6 +103,27 @@ public class HelloQuartzController {
             return "修改成功";
         }
         return "修改失败";
+    }
+
+    /**
+     * 立即执行一次（定时任务处于暂停状态才可）
+     * @return
+     */
+    @GetMapping("/run")
+    public String runOne() throws SchedulerException {
+
+        Map<String,String> map = new HashMap<>();
+        map.put("name","zhangsan");
+
+        TaskDefine task = TaskDefine.builder()
+                .jobKey(jobKey)
+                .jobDataMap(map)
+                .build();
+
+        quartzJobService.run(task);
+
+        return "运行成功";
+
     }
 
 

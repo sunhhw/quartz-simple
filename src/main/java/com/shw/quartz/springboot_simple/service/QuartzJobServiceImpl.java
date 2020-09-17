@@ -52,8 +52,11 @@ public class QuartzJobServiceImpl {
         Trigger trigger = getTrigger(jobKey, description, jobDataMap, cronExpression);
 
         scheduler.scheduleJob(jobDetail, trigger);
+        //scheduler.triggerJob();
 
     }
+
+
 
     /**
      * 暂停Job
@@ -150,5 +153,15 @@ public class QuartzJobServiceImpl {
     public JobDataMap getJobDataMap(Map<?, ?> map) {
         return map == null ? new JobDataMap() : new JobDataMap(map);
     }
+
+    /**
+     * 立即运行一次
+     * @param task
+     */
+    public void run(TaskDefine task) throws SchedulerException {
+       JobKey jobKey = task.getJobKey();
+       scheduler.triggerJob(jobKey);
+    }
+
 
 }

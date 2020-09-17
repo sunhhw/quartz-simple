@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "57d27071-a384-4be0-aa54-e52216b11123",
+		"name": "quartz-simple",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "启动定时任务",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{quartzSimple}}/quartz/startHelloWorldJob",
+					"host": [
+						"{{quartzSimple}}"
+					],
+					"path": [
+						"quartz",
+						"startHelloWorldJob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "暂停定时任务",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{quartzSimple}}/quartz/pauseHelloWorldJob",
+					"host": [
+						"{{quartzSimple}}"
+					],
+					"path": [
+						"quartz",
+						"pauseHelloWorldJob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "删除定时任务",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{quartzSimple}}/quartz/deleteHelloWorldJob",
+					"host": [
+						"{{quartzSimple}}"
+					],
+					"path": [
+						"quartz",
+						"deleteHelloWorldJob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "恢复定时任务",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{quartzSimple}}/quartz/resumeHelloWorldJob",
+					"host": [
+						"{{quartzSimple}}"
+					],
+					"path": [
+						"quartz",
+						"resumeHelloWorldJob"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "立即启动一次定时任务",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{quartzSimple}}/quartz/run",
+					"host": [
+						"{{quartzSimple}}"
+					],
+					"path": [
+						"quartz",
+						"run"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改cron表达式",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{quartzSimple}}/quartz/modifyHelloWorldJobCron",
+					"host": [
+						"{{quartzSimple}}"
+					],
+					"path": [
+						"quartz",
+						"modifyHelloWorldJobCron"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
